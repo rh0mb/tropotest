@@ -34,7 +34,7 @@ class MainController < ApplicationController
      sleep 1
      tropo = Tropo::Generator.new do
        on :event => 'continue', :next => '/hangup'
-       say "#{message_to_deliver}", :voice => params[:call][:girl] #'Ximena'
+       say "#{message_to_deliver}", :voice => 'Soledad'
      end
      render :json => tropo
 
