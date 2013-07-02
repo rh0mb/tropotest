@@ -23,7 +23,7 @@ class MainController < ApplicationController
             message = tropo_session['session']['parameters']['message']
             url = URI.encode("/speak/#{message}")
             on :event => 'continue', :next => url
-            call(:to=>"tel:+1" + tropo_session['session']['parameters']['number_to_dial'],:from => tropo_session['session']['parameters']['from_number'])     
+            call(:to=>"tel:" + tropo_session['session']['parameters']['number_to_dial'],:from => tropo_session['session']['parameters']['from_number'])     
           end
           render :json => tropo
   end
