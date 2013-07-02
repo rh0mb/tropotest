@@ -7,7 +7,7 @@ class MainController < ApplicationController
   def make_call
 
     if request.post?
-         @my_tropo_token = ENV["TROPO_TOKEN"]
+         @my_tropo_token = '2220f4d90864874e8d5037eb5713a176e2a817cbaa548be05a296f361c7de7398b5792875ceeb3fb9e02699f'
          @API_URL='http://api.tropo.com/1.0/sessions?action=create&' 
          Net::HTTP.get_print URI.parse(URI.encode(@API_URL+'&token='+@my_tropo_token+'&number_to_dial='+params[:call][:number]+"&message="+params[:call][:message]+'&from_number='+params[:call][:from])) 
          redirect_to root_path
